@@ -1,6 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Enable Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -43,15 +41,13 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Example aliases
+# Aliases
 alias czsh="nvim ~/.zshrc"
 alias ozsh="nvim ~/.oh-my-zsh"
 alias szsh="source ~/.zshrc"
 alias uzsh="omz update && git -C ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting pll && git -C ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions pull && git -C ~/.oh-my-zsh/custom/themes/powerlevel10k pull"
-
 alias uapt="sudo apt-get update && sudo apt-get upgrade && sudo apt-get clean && sudo apt-get autoclean"
 alias mypip="curl -s -X GET https://checkip.amazonaws.com"
-
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
@@ -71,18 +67,6 @@ alias dup="open --background -a Docker"
 alias dcup="docker-compose up -d",
 alias dcdown="docker-compose down",
 alias dlogs="docker logs --follow"
-
-##
-# Node
-##
-alias npmup="npm outdated -g && npm update -g"
-alias npmo="npm outdated"
-alias npmu="npm update"
-
-##
-# Python
-##
-alias python="python3"
 
 ##
 # Git
