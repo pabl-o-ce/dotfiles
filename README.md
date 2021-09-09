@@ -1,6 +1,12 @@
 # PΔBLØ ᄃΞ - Dotfiles
 
-## Settings:
+## :scroll: Settings:
 - zsh
 - neovim
 - vim
+
+## :package: Install
+
+
+
+## :clipboard: Usage
