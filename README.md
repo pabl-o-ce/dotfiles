@@ -1,1 +1,1 @@
-# PΔBLØ ᄃΞ - Dotfile
+# PΔBLØ ᄃΞ - Dotfiles
