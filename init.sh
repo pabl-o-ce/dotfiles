@@ -25,7 +25,13 @@ module_hotfixes=1
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1" > /etc/yum.repos.d/mariadb.repo
 
-dnf update
+# ssh segure config
+sed -ie '/^ChallengeResponseAuthentication/s/^.*$/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
+sed -ie '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
+sed -ie '/^PasswordAuthentication/s/^.*$/PasswordAuthentication no/' /etc/ssh/sshd_config
+sed -ie '/^UsePAM/s/^.*$/UsePAM no/' /etc/ssh/sshd_config
+
+dnf update --refresh -y
 dnf module enable nginx:mainline -y
 dnf install epel-release -y
 dnf update --refresh -y
@@ -51,11 +57,7 @@ dnf install \
     mariadb-server \
     mariadb -y
 
-# ssh segure config
-sed -ie '/^ChallengeResponseAuthentication/s/^.*$/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
-sed -ie '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
-sed -ie '/^PasswordAuthentication/s/^.*$/PasswordAuthentication no/' /etc/ssh/sshd_config
-sed -ie '/^UsePAM/s/^.*$/UsePAM no/' /etc/ssh/sshd_config
+
 systemctl restart sshd
 
 mkdir /etc/cloudflare
