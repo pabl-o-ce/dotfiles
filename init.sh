@@ -17,7 +17,7 @@ enabled=1
 gpgkey=https://nginx.org/keys/nginx_signing.key
 module_hotfixes=true" > /etc/yum.repos.d/nginx.repo
 
-touch /etc/yum.repos.d/nginx.repo
+touch /etc/yum.repos.d/mariadb.repo
 echo "[mariadb]
 name = MariaDB
 baseurl = http://yum.mariadb.org/10.8/rhel8-amd64
