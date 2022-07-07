@@ -26,7 +26,7 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1" > /etc/yum.repos.d/mariadb.repo
 
 dnf update
-dnf module enable nginx:mainline
+dnf module enable nginx:mainline -y
 dnf install epel-release -y
 dnf update --refresh -y
 dnf install \
